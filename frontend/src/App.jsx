@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 const App = () => {
   return (
-    <div data-theme='dracula'>
+    <div data-theme='sticky'>
       <Routes>
         <Route path='/' element={<WelcomePage />} />
         <Route path='/notes' element={<HomePage />} />

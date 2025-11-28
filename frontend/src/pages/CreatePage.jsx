@@ -37,7 +37,7 @@ const CreatePage = () => {
     }
   };
   return (
-    <div className='min-h-screen bg-gradient-to-br from-base-200 via-base-300 to-base-200'>
+    <div className='min-h-screen bg-gradient-to-br from-yellow-50 via-yellow-100 to-amber-50'>
       <Navbar />
       <div className='container mx-auto px-4 py-8'>
         <div className='max-w-2xl mx-auto'>
@@ -45,9 +45,9 @@ const CreatePage = () => {
             <ArrowLeftIcon className='size-5' />
             Back to Notes
           </Link>
-          <div className='card bg-base-100 shadow-2xl border border-primary/20 hover:shadow-primary/20 transition-all duration-300'>
-            <div className='card-body'>
-              <h2 className='card-title text-2xl mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent'>Create New Note</h2>
+          <div className='card bg-[#FFEB3B] shadow-2xl border-2 border-yellow-600/30 hover:shadow-yellow-400/50 transition-all duration-300' style={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)' }}>
+            <div className='card-body text-gray-800'>
+              <h2 className='card-title text-2xl mb-4 text-gray-900 font-bold'>Create New Note</h2>
               <form onSubmit={handleSubmit}>
                 <div className='form-control mb-4'>
                   <label className='label'>

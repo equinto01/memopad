@@ -71,12 +71,12 @@ const NoteDetailPage = () => {
   }
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-base-200 via-base-300 to-base-200'>
+    <div className='min-h-screen bg-gradient-to-br from-yellow-50 via-yellow-100 to-amber-50'>
       <Navbar />
       <div className='container mx-auto px-4 py-8'>
         <div className='max-w-2xl mx-auto'>
           <div className='flex items-center justify-between mb-6'>
-            <Link to='/notes' className='btn btn-ghost hover:bg-primary/10 transition-all'>
+            <Link to='/notes' className='btn btn-ghost hover:bg-yellow-200/50 transition-all text-gray-800'>
               <ArrowLeftIcon className='h-5 w-5' />
               Back to Notes
             </Link>
@@ -88,8 +88,8 @@ const NoteDetailPage = () => {
               Delete Note
             </button>
           </div>
-          <div className='card bg-base-100 shadow-2xl border border-primary/20 hover:shadow-primary/20 transition-all duration-300'>
-            <div className='card-body'>
+          <div className='card bg-[#FFEB3B] shadow-2xl border-2 border-yellow-600/30 hover:shadow-yellow-400/50 transition-all duration-300' style={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)' }}>
+            <div className='card-body text-gray-800'>
               <div className='form-control mb-4'>
                 <label className='label'>
                   <span className='label-text'>Title</span>

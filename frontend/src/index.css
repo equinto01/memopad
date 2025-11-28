@@ -17,6 +17,21 @@
     animation: float 6s ease-in-out infinite;
   }
 
+  /* Smooth flowing background animation */
+  @keyframes flow-background {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-flow-background {
+    background-size: 200% 200%;
+    animation: flow-background 15s ease-in-out infinite;
+  }
+
   /* Gradient animation */
   @keyframes gradient {
     0%, 100% {
