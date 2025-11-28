@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router";
 import { ArrowLeftIcon } from "lucide-react";
 import toast from "react-hot-toast";
 import api from "../lib/axios";
+import Navbar from "../components/Navbar";
 
 const CreatePage = () => {
   const [title, setTitle] = useState("");
@@ -36,16 +37,17 @@ const CreatePage = () => {
     }
   };
   return (
-    <div className='min-h-screen bg-base-200'>
+    <div className='min-h-screen bg-gradient-to-br from-base-200 via-base-300 to-base-200'>
+      <Navbar />
       <div className='container mx-auto px-4 py-8'>
         <div className='max-w-2xl mx-auto'>
-          <Link to={"/"} className='btn btn-ghost mb-6'>
+          <Link to={"/notes"} className='btn btn-ghost mb-6 hover:bg-primary/10 transition-all'>
             <ArrowLeftIcon className='size-5' />
             Back to Notes
           </Link>
-          <div className='card bg-base-100'>
+          <div className='card bg-base-100 shadow-2xl border border-primary/20 hover:shadow-primary/20 transition-all duration-300'>
             <div className='card-body'>
-              <h2 className='card-title text-2xl mb-4'>Create New Note</h2>
+              <h2 className='card-title text-2xl mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent'>Create New Note</h2>
               <form onSubmit={handleSubmit}>
                 <div className='form-control mb-4'>
                   <label className='label'>

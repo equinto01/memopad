@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router";
 import api from "../lib/axios";
 import { ArrowLeftIcon, LoaderIcon, Trash2Icon } from "lucide-react";
 import toast from "react-hot-toast";
+import Navbar from "../components/Navbar";
 
 const NoteDetailPage = () => {
   const [note, setNote] = useState(null);
@@ -70,23 +71,24 @@ const NoteDetailPage = () => {
   }
 
   return (
-    <div className='min-h-screen bg-base-200'>
+    <div className='min-h-screen bg-gradient-to-br from-base-200 via-base-300 to-base-200'>
+      <Navbar />
       <div className='container mx-auto px-4 py-8'>
         <div className='max-w-2xl mx-auto'>
           <div className='flex items-center justify-between mb-6'>
-            <Link to='/' className='btn btn-ghost'>
+            <Link to='/notes' className='btn btn-ghost hover:bg-primary/10 transition-all'>
               <ArrowLeftIcon className='h-5 w-5' />
               Back to Notes
             </Link>
             <button
               onClick={handleDelete}
-              className='btn btn-error btn-outline'
+              className='btn btn-error btn-outline hover:scale-105 transition-transform shadow-lg'
             >
               <Trash2Icon className='h-5 w-5' />
               Delete Note
             </button>
           </div>
-          <div className='card bg-base-100'>
+          <div className='card bg-base-100 shadow-2xl border border-primary/20 hover:shadow-primary/20 transition-all duration-300'>
             <div className='card-body'>
               <div className='form-control mb-4'>
                 <label className='label'>
