@@ -11,15 +11,6 @@ This project was created for **personal use** to explore and understand how the 
 - RESTful API design
 - Modern React development practices
 
-## ✨ Features
-
-- 🟡 **Yellow Sticky Note Theme** - Beautiful sticky note aesthetic
-- 📝 Create, Read, Update, and Delete notes
-- 🎨 Interactive and modern UI
-- ⚡ Fast and responsive design
-- 🔒 Rate limiting for API protection
-- 🌐 Welcome page explaining the project
-
 ## 🛠️ Tech Stack
 
 - **Frontend**: React, React Router, Tailwind CSS, DaisyUI
