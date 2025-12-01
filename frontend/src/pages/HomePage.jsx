@@ -36,7 +36,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-yellow-50 via-yellow-100 to-amber-50'>
+    <div className='min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-300'>
       <Navbar />
 
       {isRateLimited && <RateLimitedUI />}

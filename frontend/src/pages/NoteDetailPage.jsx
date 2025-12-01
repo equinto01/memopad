@@ -64,19 +64,19 @@ const NoteDetailPage = () => {
 
   if (loading) {
     return (
-      <div className='min-h-screen bg-base-200 flex items-center justify-center'>
+      <div className='min-h-screen bg-base-100 flex items-center justify-center'>
         <LoaderIcon className='animate-spin size-10' />
       </div>
     );
   }
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-yellow-50 via-yellow-100 to-amber-50'>
+    <div className='min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-300'>
       <Navbar />
       <div className='container mx-auto px-4 py-8'>
         <div className='max-w-2xl mx-auto'>
           <div className='flex items-center justify-between mb-6'>
-            <Link to='/notes' className='btn btn-ghost hover:bg-yellow-200/50 transition-all text-gray-800'>
+            <Link to='/notes' className='btn btn-ghost hover:bg-primary/20 transition-all text-base-content'>
               <ArrowLeftIcon className='h-5 w-5' />
               Back to Notes
             </Link>
@@ -88,8 +88,8 @@ const NoteDetailPage = () => {
               Delete Note
             </button>
           </div>
-          <div className='card bg-[#FFEB3B] shadow-2xl border-2 border-yellow-600/30 hover:shadow-yellow-400/50 transition-all duration-300' style={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)' }}>
-            <div className='card-body text-gray-800'>
+          <div className='card bg-base-200 shadow-2xl border-2 border-primary/30 hover:shadow-primary/20 transition-all duration-300' style={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2)' }}>
+            <div className='card-body text-base-content'>
               <div className='form-control mb-4'>
                 <label className='label'>
                   <span className='label-text'>Title</span>

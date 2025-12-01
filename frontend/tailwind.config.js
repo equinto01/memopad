@@ -5,10 +5,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'sticky-yellow': '#FFEB3B',
-        'sticky-yellow-light': '#FFF59D',
-        'sticky-yellow-dark': '#FBC02D',
-        'sticky-orange': '#FFC107',
+        'pastel-pink': '#FFB3D9',
+        'pastel-blue': '#B3D9FF',
+        'pastel-purple': '#D9B3FF',
+        'pastel-green': '#B3FFD9',
+        'pastel-lavender': '#E6D9FF',
+        'pastel-mint': '#D9FFE6',
+        'pastel-peach': '#FFD9B3',
+        'pastel-sky': '#B3E6FF',
       },
     },
   },
@@ -16,21 +20,20 @@ export default {
   daisyui: {
     themes: [
       {
-        sticky: {
-          "primary": "#FBC02D",
-          "secondary": "#FFC107",
-          "accent": "#FF9800",
-          "neutral": "#3d4451",
-          "base-100": "#FFFEF5",
-          "base-200": "#FFF9C4",
-          "base-300": "#FFF59D",
-          "info": "#3abff8",
-          "success": "#36d399",
-          "warning": "#fbbd23",
-          "error": "#f87272",
+        dark: {
+          "primary": "#B3D9FF",
+          "secondary": "#D9B3FF",
+          "accent": "#FFB3D9",
+          "neutral": "#2a2e37",
+          "base-100": "#1a1d24",
+          "base-200": "#252932",
+          "base-300": "#2f3440",
+          "info": "#7dd3fc",
+          "success": "#86efac",
+          "warning": "#fde047",
+          "error": "#fca5a5",
         },
       },
-      "dracula",
     ],
   },
 };

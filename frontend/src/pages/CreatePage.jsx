@@ -37,17 +37,17 @@ const CreatePage = () => {
     }
   };
   return (
-    <div className='min-h-screen bg-gradient-to-br from-yellow-50 via-yellow-100 to-amber-50'>
+    <div className='min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-300'>
       <Navbar />
       <div className='container mx-auto px-4 py-8'>
         <div className='max-w-2xl mx-auto'>
-          <Link to={"/notes"} className='btn btn-ghost mb-6 hover:bg-primary/10 transition-all'>
+          <Link to={"/notes"} className='btn btn-ghost mb-6 hover:bg-primary/20 transition-all text-base-content'>
             <ArrowLeftIcon className='size-5' />
             Back to Notes
           </Link>
-          <div className='card bg-[#FFEB3B] shadow-2xl border-2 border-yellow-600/30 hover:shadow-yellow-400/50 transition-all duration-300' style={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)' }}>
-            <div className='card-body text-gray-800'>
-              <h2 className='card-title text-2xl mb-4 text-gray-900 font-bold'>Create New Note</h2>
+          <div className='card bg-base-200 shadow-2xl border-2 border-primary/30 hover:shadow-primary/20 transition-all duration-300' style={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2)' }}>
+            <div className='card-body text-base-content'>
+              <h2 className='card-title text-2xl mb-4 text-base-content font-bold'>Create New Note</h2>
               <form onSubmit={handleSubmit}>
                 <div className='form-control mb-4'>
                   <label className='label'>

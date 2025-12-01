@@ -66,10 +66,10 @@
   /* Pulse glow */
   @keyframes pulse-glow {
     0%, 100% {
-      box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+      box-shadow: 0 0 20px rgba(179, 217, 255, 0.3);
     }
     50% {
-      box-shadow: 0 0 40px rgba(0, 255, 157, 0.6);
+      box-shadow: 0 0 40px rgba(179, 217, 255, 0.6);
     }
   }
 
@@ -84,9 +84,9 @@
 
   /* Glass morphism effect */
   .glass {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(37, 41, 50, 0.7);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(179, 217, 255, 0.2);
   }
 
   /* Enhanced card hover */
@@ -96,7 +96,7 @@
 
   .card-interactive:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 255, 157, 0.2);
+    box-shadow: 0 20px 40px rgba(179, 217, 255, 0.2);
   }
 
   /* Text glow effect */
