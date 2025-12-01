@@ -24,29 +24,14 @@ const WelcomePage = () => {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-base-100 via-base-200 to-base-300">
-      {/* Smooth flowing background gradient */}
-      <div className="fixed inset-0 opacity-30 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-pastel-blue/20 via-pastel-purple/15 to-pastel-pink/20 animate-flow-background" />
-      </div>
-
-      {/* Floating particles */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-primary/20 animate-float"
-            style={{
-              width: Math.random() * 100 + 50,
-              height: Math.random() * 100 + 50,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${Math.random() * 3 + 3}s`,
-            }}
-          />
-        ))}
-      </div>
+    <div className="min-h-screen relative overflow-hidden" style={{
+      background: 'linear-gradient(135deg, #1a1d24 0%, #252932 25%, #2f3440 50%, #1a1d24 75%, #252932 100%)',
+      backgroundSize: '400% 400%',
+    }}>
+      {/* Beautiful neon gradient overlay */}
+      <div className="fixed inset-0 pointer-events-none opacity-30" style={{
+        background: 'radial-gradient(ellipse at top, rgba(0, 255, 255, 0.2) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(255, 0, 255, 0.15) 0%, transparent 50%), radial-gradient(ellipse at bottom left, rgba(191, 0, 255, 0.15) 0%, transparent 50%)',
+      }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
         {/* Hero Section */}
@@ -59,7 +44,9 @@ const WelcomePage = () => {
             <SparklesIcon className="size-16 text-primary animate-pulse" />
           </div>
           
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 text-primary animate-gradient">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 text-primary" style={{
+            textShadow: '0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.3), 0 0 60px rgba(0, 255, 255, 0.2)',
+          }}>
             MemoPad
           </h1>
           
@@ -77,7 +64,16 @@ const WelcomePage = () => {
 
           <Link
             to="/notes"
-            className="btn btn-lg group mt-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-primary hover:bg-primary/80 text-base-100 border-0"
+            className="btn btn-lg group mt-8 shadow-lg transition-all duration-300 transform hover:scale-105 bg-primary hover:bg-primary/80 text-base-100 border-0"
+            style={{
+              boxShadow: '0 4px 15px rgba(0, 255, 255, 0.3)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.3)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 255, 255, 0.3)';
+            }}
           >
             <span>Explore Notes</span>
             <ArrowRightIcon className="size-5 group-hover:translate-x-1 transition-transform" />
@@ -204,7 +200,16 @@ const WelcomePage = () => {
         <div className="text-center mt-16">
           <Link
             to="/notes"
-            className="btn btn-lg group shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-primary hover:bg-primary/80 text-base-100 border-0"
+            className="btn btn-lg group shadow-lg transition-all duration-300 transform hover:scale-105 bg-primary hover:bg-primary/80 text-base-100 border-0"
+            style={{
+              boxShadow: '0 4px 15px rgba(0, 255, 255, 0.3)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.3)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 255, 255, 0.3)';
+            }}
           >
             <span>Start Exploring</span>
             <ArrowRightIcon className="size-5 group-hover:translate-x-1 transition-transform" />

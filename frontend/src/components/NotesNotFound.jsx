@@ -19,7 +19,16 @@ const NotesNotFound = () => {
       </p>
       <Link 
         to='/create' 
-        className='btn btn-lg group shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all bg-primary hover:bg-primary/80 text-base-100 border-0'
+        className='btn btn-lg group shadow-lg transform hover:scale-105 transition-all bg-primary hover:bg-primary/80 text-base-100 border-0'
+        style={{
+          boxShadow: '0 4px 15px rgba(0, 255, 255, 0.3)',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.3)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 255, 255, 0.3)';
+        }}
       >
         <SparklesIcon className='size-5 group-hover:rotate-180 transition-transform duration-500' />
         Create Your First Note

@@ -37,7 +37,10 @@ const CreatePage = () => {
     }
   };
   return (
-    <div className='min-h-screen bg-gradient-to-br from-base-100 via-base-200 to-base-300'>
+    <div className='min-h-screen' style={{
+      background: 'linear-gradient(135deg, #1a1d24 0%, #252932 25%, #2f3440 50%, #1a1d24 75%, #252932 100%)',
+      backgroundSize: '400% 400%',
+    }}>
       <Navbar />
       <div className='container mx-auto px-4 py-8'>
         <div className='max-w-2xl mx-auto'>

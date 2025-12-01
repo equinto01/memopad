@@ -12,7 +12,9 @@ const Navbar = () => {
         <div className='flex items-center justify-between'>
           <Link to="/" className='flex items-center gap-2 group'>
             <SparklesIcon className='size-6 text-primary group-hover:rotate-180 transition-transform duration-500' />
-            <h1 className='text-3xl font-bold text-primary font-mono tracking-tight group-hover:scale-105 transition-transform'>
+            <h1 className='text-3xl font-bold text-primary font-mono tracking-tight group-hover:scale-105 transition-transform' style={{
+              textShadow: '0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3)',
+            }}>
               MemoPad
             </h1>
           </Link>
@@ -23,14 +25,38 @@ const Navbar = () => {
                   <HomeIcon className='size-4' />
                   <span>Home</span>
                 </Link>
-                <Link to="/create" className='btn gap-2 shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all bg-primary hover:bg-primary/80 text-base-100 border-0'>
+                <Link 
+                  to="/create" 
+                  className='btn gap-2 shadow-lg transform hover:scale-105 transition-all bg-primary hover:bg-primary/80 text-base-100 border-0'
+                  style={{
+                    boxShadow: '0 4px 15px rgba(0, 255, 255, 0.3)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 255, 255, 0.3)';
+                  }}
+                >
                   <PlusIcon className='size-5' />
                   <span>New Note</span>
                 </Link>
               </>
             )}
             {isWelcomePage && (
-              <Link to={"/notes"} className='btn gap-2 shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all bg-primary hover:bg-primary/80 text-base-100 border-0'>
+              <Link 
+                to={"/notes"} 
+                className='btn gap-2 shadow-lg transform hover:scale-105 transition-all bg-primary hover:bg-primary/80 text-base-100 border-0'
+                style={{
+                  boxShadow: '0 4px 15px rgba(0, 255, 255, 0.3)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 255, 255, 0.3)';
+                }}
+              >
                 <span>Get Started</span>
                 <PlusIcon className='size-5' />
               </Link>

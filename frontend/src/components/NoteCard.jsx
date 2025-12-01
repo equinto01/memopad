@@ -20,9 +20,17 @@ const NoteCard = ({ note, setNotes }) => {
   return (
     <Link
       to={`/note/${note._id}`}
-      className='card bg-base-200 card-interactive hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 border-2 border-primary/30 group relative overflow-hidden transform hover:-rotate-1 hover:scale-105'
+      className='card bg-base-200 card-interactive hover:shadow-xl transition-all duration-300 border-2 border-primary/30 group relative overflow-hidden transform hover:-rotate-1 hover:scale-105'
       style={{
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2)',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.2), 0 4px 6px rgba(0, 0, 0, 0.3)';
+        e.currentTarget.style.borderColor = 'rgba(0, 255, 255, 0.6)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2)';
+        e.currentTarget.style.borderColor = '';
       }}
     >
       <div className='absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent group-hover:from-primary/20 transition-all duration-300' />
