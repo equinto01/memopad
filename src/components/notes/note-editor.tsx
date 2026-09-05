@@ -57,7 +57,7 @@ export function NoteEditor({ note, onBack, onChange, onDelete, titleRef }: Props
       <div className="flex h-full flex-col items-center justify-center px-8 text-center">
         <p className="font-display text-3xl tracking-tight">Pick a page</p>
         <p className="mt-2 max-w-sm text-muted">
-          Select a note from the list, or press N to start a new one. Everything autosaves in this browser.
+          Select a note from the list, or press N to start a new one. Everything autosaves.
         </p>
       </div>
     );

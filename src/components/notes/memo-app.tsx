@@ -22,7 +22,8 @@ type Props = {
 export function MemoApp({ selectedId, onSelect }: Props) {
   const { theme, toggle } = useTheme();
   const notes = useNotes((s) => s.notes);
-  const ensureSeed = useNotes((s) => s.ensureSeed);
+  const loadError = useNotes((s) => s.loadError);
+  const loadNotes = useNotes((s) => s.loadNotes);
   const createNote = useNotes((s) => s.createNote);
   const updateNote = useNotes((s) => s.updateNote);
   const deleteNote = useNotes((s) => s.deleteNote);
@@ -35,11 +36,8 @@ export function MemoApp({ selectedId, onSelect }: Props) {
   const fileRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    void Promise.resolve(useNotes.persist.rehydrate()).then(() => {
-      useNotes.getState().ensureSeed();
-      setHydrated(true);
-    });
-  }, [ensureSeed]);
+    void useNotes.getState().loadNotes().then(() => setHydrated(true));
+  }, [loadNotes]);
 
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
@@ -87,17 +85,26 @@ export function MemoApp({ selectedId, onSelect }: Props) {
     onSelect(sortNotes(notes)[0]?.id);
   }, [hydrated, notes, onSelect, selectedId]);
 
-  function handleCreate() {
-    const note = createNote(colorFilter === "all" ? "linen" : colorFilter);
-    onSelect(note.id);
-    window.setTimeout(() => titleRef.current?.focus(), 30);
+  async function handleCreate() {
+    try {
+      const note = await createNote(colorFilter === "all" ? "linen" : colorFilter);
+      onSelect(note.id);
+      window.setTimeout(() => titleRef.current?.focus(), 30);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Could not create note");
+    }
   }
 
-  function handleDelete(id: string) {
-    const next = deleteNote(id);
-    setQuery("");
-    onSelect(next);
-    toast("Note deleted");
+  async function handleDelete(id: string) {
+    try {
+      const next = await deleteNote(id);
+      setQuery("");
+      onSelect(next);
+      toast("Note deleted");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Could not delete note");
+      void loadNotes();
+    }
   }
 
   function downloadAll() {
@@ -115,14 +122,14 @@ export function MemoApp({ selectedId, onSelect }: Props) {
   function onImportFile(file: File | undefined) {
     if (!file) return;
     const reader = new FileReader();
-    reader.onload = () => {
+    reader.onload = async () => {
       try {
         const parsed = parseImportedNotes(JSON.parse(String(reader.result)));
         if (!parsed) {
           toast.error("That file does not look like a MemoPad backup");
           return;
         }
-        const added = importNotes(parsed);
+        const added = await importNotes(parsed);
         toast.success(added > 0 ? `Imported ${parsed.length} notes` : "Notes updated from backup");
       } catch {
         toast.error("Could not read that file");
@@ -183,6 +190,11 @@ export function MemoApp({ selectedId, onSelect }: Props) {
           </Button>
         </div>
       </header>
+      {loadError ? (
+        <p className="border-b border-border bg-accent px-4 py-2 text-sm text-muted">
+          Could not load notes. Add MONGO_URI and Upstash keys on Vercel, then redeploy.
+        </p>
+      ) : null}
 
       <div className="flex min-h-0 flex-1">
         <aside
