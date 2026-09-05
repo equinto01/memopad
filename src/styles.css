@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f3efe4;
+  --fg: #1c1914;
+  --card: #faf7f0;
+  --muted: #6f685c;
+  --primary: #38564a;
+  --primary-fg: #f4f0e6;
+  --secondary: #ebe4d6;
+  --accent: #e7dfd0;
+  --border: #ddd4c4;
+  --ring: #38564a;
+  --shadow: 0 1px 0 rgb(28 25 20 / 0.04), 0 18px 40px -24px rgb(28 25 20 / 0.3);
+  --swatch-linen: #e4d8c4;
+  --swatch-sage: #b7c6b4;
+  --swatch-clay: #d4b9a4;
+  --swatch-sky: #b9c6d0;
+  --swatch-ink: #2c3935;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+}
+
+.dark {
+  --bg: #12110e;
+  --fg: #ece7db;
+  --card: #1b1a16;
+  --muted: #9a9386;
+  --primary: #b7cfc3;
+  --primary-fg: #12110e;
+  --secondary: #23211c;
+  --accent: #26241f;
+  --border: #2c2a24;
+  --ring: #b7cfc3;
+  --shadow: 0 1px 0 rgb(255 255 255 / 0.03), 0 18px 40px -24px rgb(0 0 0 / 0.6);
+  --swatch-linen: #6f6148;
+  --swatch-sage: #4d6a55;
+  --swatch-clay: #7a5c4a;
+  --swatch-sky: #4d6573;
+  --swatch-ink: #5c6862;
+}
+
+@theme inline {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-fg);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --shadow-card: var(--shadow);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-image: radial-gradient(
+      color-mix(in oklab, var(--fg) 5.5%, transparent) 0.7px,
+      transparent 0.7px
+    );
+    background-size: 6px 6px;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 28%, transparent);
+    color: var(--fg);
+  }
+}
+
+[data-swatch="linen"] {
+  background: var(--swatch-linen);
+}
+[data-swatch="sage"] {
+  background: var(--swatch-sage);
+}
+[data-swatch="clay"] {
+  background: var(--swatch-clay);
+}
+[data-swatch="sky"] {
+  background: var(--swatch-sky);
+}
+[data-swatch="ink"] {
+  background: var(--swatch-ink);
+}
+
+.note-sheet {
+  border-left: 2px solid color-mix(in oklab, var(--primary) 38%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
