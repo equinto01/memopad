@@ -1,6 +1,6 @@
 # MemoPad
 
-A quiet notebook — notes autosave to MongoDB.
+A website test for MERN stack.
 
 - Search, pin, color, and export
 - Rate-limited with Upstash
